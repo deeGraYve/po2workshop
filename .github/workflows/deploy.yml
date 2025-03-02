@@ -9,15 +9,21 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Sync files to S3 (Preserve Existing Files)
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Sync files to S3 (No Deletes, Proper Exclusions)
         uses: jakejarvis/s3-sync-action@master
         with:
           args: >-
             --acl public-read
-            --exclude ".github/*"
-            --exclude ".idea/*"
-            --exclude ".gitignore"
             --exclude ".git/*"
+            --exclude ".github/*"
+            --exclude ".gitignore"
+            --exclude "*/.git/*"
+            --exclude "*/.github/*"
+            --exclude "*/.gitignore"
+            --exclude ".*"
         env:
           AWS_S3_BUCKET: po2workshop.com
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
