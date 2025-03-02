@@ -9,11 +9,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Sync files to S3
+      - name: Debug file presence
+        run: ls -la
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Sync files to S3 (without deleting existing ones)
         uses: jakejarvis/s3-sync-action@master
         with:
           args: >-
-            --acl public-read --delete
+            --acl public-read
             --exclude ".github/*"
             --exclude ".idea/*"
             --exclude ".gitignore"
