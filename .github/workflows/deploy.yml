@@ -15,16 +15,19 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y awscli
+
       - name: Sync files to S3 (without deleting existing ones)
-        uses: jakejarvis/s3-sync-action@master
-        with:
-          args: |
-            --exclude ".git/*" 
-            --exclude ".github/*" 
-            --exclude ".idea/*" 
+        run: |
+          aws s3 sync . s3://po2workshop.com \
+            --region us-east-1 \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude ".idea/*" \
             --exclude ".gitignore"
         env:
-          AWS_S3_BUCKET: po2workshop.com
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: us-east-1
