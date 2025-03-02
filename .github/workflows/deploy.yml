@@ -19,7 +19,6 @@ jobs:
         uses: jakejarvis/s3-sync-action@master
         with:
           args: |
-            --acl public-read
             --exclude ".github/*"
             --exclude ".idea/*"
             --exclude ".gitignore"
