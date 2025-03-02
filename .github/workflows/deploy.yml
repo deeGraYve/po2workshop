@@ -8,17 +8,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Debug file presence
-        run: ls -la
 
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Install AWS CLI
+      - name: Install AWS CLI (Correct Method)
         run: |
-          sudo apt-get update
-          sudo apt-get install -y awscli
+          curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+          unzip awscliv2.zip
+          sudo ./aws/install
+          aws --version  # Verify AWS CLI installation
 
       - name: Sync files to S3 (without deleting existing ones)
         run: |
