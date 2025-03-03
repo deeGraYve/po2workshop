@@ -5,17 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Past Workshops - Past Ocean Oxygen Workshop</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .workshop {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e6e6e6;
+        }
+        
+        .workshop:last-child {
+            border-bottom: none;
+        }
+        
+        .workshop-year {
+            color: #005b96;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        
+        .workshop-location {
+            font-weight: 500;
+            color: #444;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-list {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+        
+        .highlight-list li {
+            margin-bottom: 10px;
+        }
+        
+        .resources-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #0085ca;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .resources-link:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="speakers.html">Speakers</a>
-    <a href="past-workshops.html">Past Workshops</a>
-</nav>
-<div class="content">
-    <h1>Past Workshops</h1>
-    <p>Explore previous editions of the Past Ocean Oxygen Workshop, featuring research papers, keynote speeches, and panel discussions.</p>
-</div>
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">PO<span>2</span> Workshop</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="speakers.html">Speakers</a></li>
+                    <li><a href="past-workshops.html" class="active">Past Workshops</a></li>
+                    <li><a href="directions.html">Directions</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content">
+        <h1>Past Workshops</h1>
+        <p>Explore previous editions of the Past Ocean Oxygen Workshop, featuring research presentations, keynote speeches, and scientific breakthroughs in oceanic oxygen studies.</p>
+        
+        <div class="workshop">
+            <h2 class="workshop-year">PO<sup>2</sup> 2024 - Sydney, Australia</h2>
+            <p class="workshop-location">University of Sydney, Marine Research Center</p>
+            <p>Focused on Pacific Ocean oxygen minimum zones and their response to climate change over the past millennium.</p>
+            
+            <h3>Highlights:</h3>
+            <ul class="highlight-list">
+                <li>Keynote by Dr. Emma Williams on "Deep Pacific Oxygen Depletion Rates: 1000-2000 CE"</li>
+                <li>Panel discussion on sediment core analysis techniques</li>
+                <li>Introduction of new paleoceanographic proxies for oxygen reconstruction</li>
+            </ul>
+            
+            <a href="#" class="resources-link">Access Proceedings and Presentations →</a>
+        </div>
+        
+        <div class="workshop">
+            <h2 class="workshop-year">PO<sup>2</sup> 2022 - Bergen, Norway</h2>
+            <p class="workshop-location">Norwegian Institute for Marine Research</p>
+            <p>Examined North Atlantic oxygen trends throughout the Holocene with special focus on anthropogenic impacts.</p>
+            
+            <h3>Highlights:</h3>
+            <ul class="highlight-list">
+                <li>Comparison of pre-industrial and modern ocean oxygen distribution</li>
+                <li>Advanced modeling techniques for historical oxygen reconstruction</li>
+                <li>Collaborative project launch: "North Atlantic Oxygen Timeline"</li>
+            </ul>
+            
+            <a href="#" class="resources-link">Access Proceedings and Presentations →</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Past Ocean Oxygen Workshop | Contact: info@po2workshop.org</p>
+    </footer>
 </body>
 </html>
